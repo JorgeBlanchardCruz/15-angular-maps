@@ -17,8 +17,8 @@
       "node_modules": true,
       ".angular": true,
       "src/.env.template": false,
-      "src/.env": true,
-      "src/environments": true,
+      "src/.env": false,
+      "src/environments": false,
       "public": true
     }
 }
