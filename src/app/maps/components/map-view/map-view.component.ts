@@ -9,20 +9,20 @@ import { MapService, PlacesService } from '../../services';
 })
 export class MapViewComponent implements AfterViewInit {
 
-  @ViewChild('mapDiv') 
+  @ViewChild('mapDiv')
   mapDivElement!: ElementRef
 
-  constructor( 
+  constructor(
     private placesService: PlacesService,
     private mapService: MapService
   ) { }
 
   ngAfterViewInit(): void {
     if ( !this.placesService.useLocation ) throw Error('No hay placesService.userLocation');
-      
+
     const map = new Map({
       container: this.mapDivElement.nativeElement,
-      style: 'mapbox://styles/mapbox/light-v10', // style URL
+      style: 'mapbox://styles/mapbox/satellite-streets-v12',
       center: this.placesService.useLocation,
       zoom: 14,
     });
